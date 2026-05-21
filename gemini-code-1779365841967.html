@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Diiwaanka Macamiisha</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0F172A;--ink2:#475569;--ink3:#94A3B8;--line:#E2E8F0;
+  --bg:#F8FAFC;--card:#FFFFFF;
+  --blue:#2563EB;--blue-d:#1D4ED8;--blue-l:#EFF6FF;
+  --green:#059669;--green-l:#ECFDF5;
+  --red:#DC2626;--red-l:#FEF2F2;
+  --amber:#D97706;--amber-l:#FFFBEB;
+  --violet:#7C3AED;--violet-l:#F5F3FF;
+  --r:12px;--rs:8px;
+  --sh:0 1px 3px rgba(0,0,0,.08),0 1px 2px rgba(0,0,0,.05);
+}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;font-size:14px}
+
+/* AUTH */
+#authScreen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(135deg,#1E3A8A 0%,#1D4ED8 50%,#2563EB 100%)}
+.auth-box{background:var(--card);border-radius:20px;padding:36px 32px;width:100%;max-width:400px;box-shadow:0 24px 64px rgba(0,0,0,.25)}
+.auth-logo{text-align:center;margin-bottom:28px}
+.logo-icon{width:56px;height:56px;background:var(--blue-l);border-radius:14px;display:inline-flex;align-items:center;justify-content:center;margin-bottom:12px}
+.auth-logo h1{font-size:1.4rem;font-weight:800;letter-spacing:-.5px}
+.auth-logo p{color:var(--ink2);font-size:.85rem;margin-top:4px}
+.form-lbl{display:block;font-size:.75rem;font-weight:700;color:var(--ink2);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px}
+.form-inp{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:var(--rs);font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;color:var(--ink);background:var(--bg);outline:none;transition:.18s}
+.form-inp:focus{border-color:var(--blue);background:#fff}
+.form-group{margin-bottom:14px}
+.form-sel{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:var(--rs);font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;color:var(--ink);background:var(--bg);outline:none;transition:.18s;appearance:none;cursor:pointer}
+.form-sel:focus{border-color:var(--blue);background:#fff}
+.btn{width:100%;padding:13px;border:none;border-radius:var(--rs);font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;font-weight:700;cursor:pointer;transition:.15s}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 4px 14px rgba(37,99,235,.3)}
+.btn-primary:active{background:var(--blue-d);transform:scale(.98)}
+.err-msg{padding:10px 13px;background:var(--red-l);border:1px solid #FECACA;border-radius:var(--rs);color:var(--red);font-size:.83rem;margin-bottom:12px;display:none}
+.err-msg.show{display:block}
+.auth-note{margin-top:14px;padding:12px;background:var(--amber-l);border-radius:var(--rs);font-size:.8rem;color:var(--amber);line-height:1.6;border:1px solid #FDE68A}
+.auth-note code{background:rgba(0,0,0,.07);padding:1px 5px;border-radius:4px;font-size:.82rem}
+
+/* APP */
+#appScreen{display:none;min-height:100vh;flex-direction:column}
+#appScreen.active{display:flex}
+
+/* TOPBAR */
+.topbar{background:var(--blue);color:#fff;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(37,99,235,.35)}
+.topbar-left{display:flex;align-items:center;gap:10px}
+.topbar h1{font-size:1rem;font-weight:800;letter-spacing:-.3px}
+.topbar-right{display:flex;align-items:center;gap:8px}
+.user-chip{background:rgba(255,255,255,.2);padding:5px 12px;border-radius:20px;font-size:.78rem;font-weight:600;display:flex;align-items:center;gap:6px}
+.admin-chip{background:rgba(124,58,237,.55);padding:5px 12px;border-radius:20px;font-size:.75rem;font-weight:700;color:#fff;border:1px solid rgba(255,255,255,.25);display:none}
+.btn-logout{background:rgba(255,255,255,.18);border:none;color:#fff;padding:7px 14px;border-radius:var(--rs);font-family:'Plus Jakarta Sans',sans-serif;font-size:.8rem;font-weight:700;cursor:pointer;transition:.15s}
+.btn-logout:active{background:rgba(255,255,255,.3)}
+
+/* NAV TABS */
+.nav-tabs{display:flex;background:var(--card);border-bottom:1px solid var(--line);padding:0 16px;position:sticky;top:53px;z-index:99;overflow-x:auto}
+.nav-tab{padding:13px 16px;border:none;background:none;font-family:'Plus Jakarta Sans',sans-serif;font-size:.85rem;font-weight:600;color:var(--ink2);cursor:pointer;border-bottom:2.5px solid transparent;transition:.15s;display:flex;align-items:center;gap:6px;white-space:nowrap}
+.nav-tab.active{color:var(--blue);border-bottom-color:var
